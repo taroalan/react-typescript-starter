@@ -8,17 +8,22 @@ import { fetchList } from '../../store/action';
 // console.log(Button);
 
 interface HomeProps {
-  list: Array<any>;
+  list: [];
   fetchList: Function;
 }
 
 class Home extends React.Component<HomeProps, {}> {
+  static defaultProps: Partial<HomeProps> = {
+    list: []
+  };
+
   constructor(props: Readonly<HomeProps>) {
     super(props);
     console.log(this.props);
   }
 
   fetchData() {
+    console.log('click');
     this.props.fetchList();
   }
 
@@ -29,7 +34,7 @@ class Home extends React.Component<HomeProps, {}> {
         <p>homepage</p>
         <ul>
           {
-            this.props.list.map((item, i) => <li key={i}>{item.name} - {item.age}</li>)
+            this.props.list.map((item: any, i) => <li key={i}>{item.name} - {item.age}</li>)
           }
         </ul>
         <Button type="primary" onClick={this.fetchData.bind(this)}>Button</Button>
@@ -47,7 +52,9 @@ const mapStateToProps = (state: any) => {
 
 const mapActionToProps = (dispatch: any) => {
   return {
-    fetchList: () => dispatch(fetchList)
+    fetchList() {
+      dispatch(fetchList());
+    }
   };
 };
 
