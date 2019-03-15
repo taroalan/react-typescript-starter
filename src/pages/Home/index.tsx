@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from 'antd';
+import Button from 'antd/lib/button';
 import { connect } from 'react-redux';
 
 import Counter from '../../components/Counter';

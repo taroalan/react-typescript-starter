@@ -1,6 +1,6 @@
 import Home from './pages/Home';
 import NestRoutes from './pages/NestRoutes';
-import Sub1 from './pages/NestRoutes/Sub1';
+import Sub1 from './pages/NestRoutes/AsyncSub1';
 import Sub2 from './pages/NestRoutes/Sub2';
 import About from './pages/About';
 
