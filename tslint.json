@@ -1,7 +1,9 @@
 {
   "defaultSeverity": "error",
   "extends": [
-    "tslint-config-standard"
+    "tslint:latest",
+    "tslint-react",
+    "tslint-config-prettier"
   ],
   "jsRules": {},
   "rules": {
@@ -12,7 +14,12 @@
         "asyncArrow": "always"
       }],
       "semicolon": [true, "always"],
-      "quotemark": [true, "single", "jsx-double"]
+      "quotemark": [true, "single", "jsx-double"],
+      "member-access": false,
+      "jsx-space-before-trailing-slash": [true, "always"],
+      "no-submodule-imports": false,
+      "ordered-imports": false,
+      "no-implicit-dependencies": false
   },
   "rulesDirectory": []
 }

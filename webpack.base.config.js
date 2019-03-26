@@ -1,4 +1,4 @@
-// const path = require('path');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -8,7 +8,10 @@ module.exports = {
   devtool: isDev ? 'source-map' : false,
   mode: isDev ? 'development' : 'production',
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
   },
   module: {
     rules: [
