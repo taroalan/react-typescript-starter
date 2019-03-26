@@ -8,6 +8,6 @@ const LoadableComponent = Loadable({
 
 export default class Sub1 extends React.Component<{}, {}> {
   render() {
-    return <LoadableComponent/>;
+    return <LoadableComponent />;
   }
 }

@@ -6,9 +6,9 @@ export default class SiteHeader extends React.Component {
     return (
       <div className="site-header">
         <Link to="/">Home</Link>
-        <br/>
+        <br />
         <Link to="/nestroutes">NestRoutes</Link>
-        <br/>
+        <br />
         <Link to="/about">About</Link>
       </div>
     );

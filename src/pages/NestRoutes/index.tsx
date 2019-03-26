@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Link, Route } from 'react-router-dom';
 
-interface NestRoutesProps {
-  routes: Array<any>;
+interface IProps {
+  routes: any[];
 }
 
-export default class NestRoutes extends React.Component<NestRoutesProps, {}> {
+export default class NestRoutes extends React.Component<IProps, {}> {
   constructor(props: Readonly<any>) {
     super(props);
     console.log(this.props.routes);
@@ -16,9 +16,9 @@ export default class NestRoutes extends React.Component<NestRoutesProps, {}> {
       <div>
         <p>nestroutes</p>
         <Link to="/nestroutes/sub1">Sub1</Link>
-        <br/>
+        <br />
         <Link to="/nestroutes/sub2">Sub2</Link>
-        <br/>
+        <br />
         {
           this.props.routes.map((route: any, i: number) =>
             <Route
