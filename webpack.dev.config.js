@@ -7,12 +7,12 @@ const devConfig = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
   devServer: {
     port: 9001,
     hot: true,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
 };
 

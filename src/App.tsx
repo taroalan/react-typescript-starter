@@ -13,23 +13,20 @@ export default class App extends React.Component {
         path={route.path}
         exact={route.exact}
         // tslint:disable-next-line: jsx-no-lambda
-        render={props => (
-          <route.component {...props} routes={route.routes} />
-        )}
+        render={props => <route.component {...props} routes={route.routes} />}
       />
     ));
   }
 
   render() {
-
     return (
       <Router>
         <React.Fragment>
-        <BasicLayout>
-          <SiteHeader />
-          {this.renderRoutes()}
-        </BasicLayout>
-        {/* {
+          <BasicLayout>
+            <SiteHeader />
+            {this.renderRoutes()}
+          </BasicLayout>
+          {/* {
           routes.map((route: any, i: number) =>
             <Route
               key={i}

@@ -4,20 +4,20 @@ Using TypeScript with React, including React-Router, Redux and Ant Design UI lib
 
 ## Features
 
-+ React full stack
-+ Use TypeScript write React components
-+ Use Sass write css
-+ Beautify UI library with Ant Design
-+ Support dynamic import
-+ Optimized build
+- React full stack
+- Use TypeScript write React components
+- Use Sass write css
+- Beautify UI library with Ant Design
+- Support dynamic import
+- Optimized build
 
 ## Technology Stacks
 
-+ [TypeScript](https://www.typescriptlang.org/)
-+ [React](https://reactjs.org)
-+ [React Router](https://reacttraining.com/react-router/)
-+ [Redux](https://redux.js.org/)
-+ [And Design UI](https://ant.design/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org)
+- [React Router](https://reacttraining.com/react-router/)
+- [Redux](https://redux.js.org/)
+- [And Design UI](https://ant.design/)
 
 ## Usage
 
