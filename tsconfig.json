@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "target": "es5",
-    "jsx": "react",
+    "target": "esnext",
     "module": "esnext",
-    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
-    "lib": ["es2015.promise", "es2015", "dom"],
-    "baseUrl": "src",
+    "importHelpers": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "baseUrl": "./",
+    "strict": true,
     "paths": {
-      "@/*": ["*"]
-    }
+      "@/*": ["src/*"]
+    },
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": ["node_modules"]
+  "include": ["src/**/*", "typings.d.ts"]
 }

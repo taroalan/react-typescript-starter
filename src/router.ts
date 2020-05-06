@@ -8,7 +8,7 @@ const routes: Array<Object> = [
   {
     path: '/',
     exact: true,
-    component: Home
+    component: Home,
   },
   {
     path: '/nestroutes',
@@ -16,18 +16,18 @@ const routes: Array<Object> = [
     routes: [
       {
         path: '/nestroutes/sub1',
-        component: Sub1
+        component: Sub1,
       },
       {
         path: '/nestroutes/sub2',
-        component: Sub2
-      }
-    ]
+        component: Sub2,
+      },
+    ],
   },
   {
     path: '/about',
-    component: About
-  }
+    component: About,
+  },
 ];
 
 export default routes;
