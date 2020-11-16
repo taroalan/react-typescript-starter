@@ -1,5 +1,5 @@
 const path = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const config = require('./webpack.base.config');
 
 const devConfig = {
@@ -10,9 +10,10 @@ const devConfig = {
     publicPath: '/',
   },
   devServer: {
-    port: 9001,
+    port: 3000,
     hot: true,
     historyApiFallback: true,
+    disableHostCheck: true,
   },
 };
 

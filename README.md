@@ -24,38 +24,18 @@ Using TypeScript with React, including React-Router, Redux and Ant Design UI lib
 Clone the project then run the following commands
 
 ```shell
-npm i
-npm run dev
+npm install
+npm start
 ```
 
 Build and preview
 
 ```shell
 npm run build
-npm start
+npm run serve
 ```
 
 Then visit `http://localhost:9002` in your browser
-
-If you want to use js or jsx, you can do it like this:
-
-add loader in `webpack.base.config.js`
-
-```js
-{
-  test: /\.jsx?$/,
-  use: 'babel-loader',
-  exclude: /node_modules/
-}
-```
-
-add presets in `.babelrc`
-
-```js
-{
-  "presets": ["@babel/env", "@babel/react"]
-}
-```
 
 ## License
 

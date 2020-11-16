@@ -1,23 +1,23 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 
 import './index.scss';
 
-export default class Counter extends React.Component {
+export default class Counter extends Component {
   state = {
-    count: 0
+    count: 0,
   };
 
   increment = () => {
     this.setState({
-      count: this.state.count + 1
+      count: this.state.count + 1,
     });
-  }
+  };
 
   decrement = () => {
     this.setState({
-      count: this.state.count - 1
+      count: this.state.count - 1,
     });
-  }
+  };
 
   componendDidMount() {
     console.log('mount');
@@ -26,7 +26,7 @@ export default class Counter extends React.Component {
   render() {
     return (
       <div className="counter">
-        <p>{ this.state.count }</p>
+        <p>{this.state.count}</p>
         <button onClick={this.increment}>Increment</button>
         <button onClick={this.decrement}>Decrement</button>
       </div>

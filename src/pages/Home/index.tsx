@@ -1,6 +1,4 @@
-// const QAPIC = require('../../assets/qa.jpeg');
-import * as React from 'react';
-// import Button from 'antd/lib/button';
+import React, { Component } from 'react';
 import { Button } from 'antd';
 import { connect } from 'react-redux';
 
@@ -13,17 +11,19 @@ import QAPIC from '../../assets/qa.jpeg';
 
 console.log(QAPIC);
 
-interface IProps {
+interface Props {
   list: [];
   fetchList: () => void;
 }
 
-class Home extends React.Component<IProps, {}> {
-  static defaultProps: Partial<IProps> = {
+interface State {}
+
+class Home extends Component<Props, State> {
+  static defaultProps: Partial<Props> = {
     list: [],
   };
 
-  constructor(props: Readonly<IProps>) {
+  constructor(props: Readonly<Props>) {
     super(props);
     console.log(this.props);
   }
@@ -68,7 +68,4 @@ const mapActionToProps = (dispatch: any) => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapActionToProps
-)(Home);
+export default connect(mapStateToProps, mapActionToProps)(Home);

@@ -1,12 +1,14 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
 
-interface IProps {
+interface Props {
   routes: any[];
 }
 
-export default class NestRoutes extends React.Component<IProps, {}> {
-  constructor(props: Readonly<any>) {
+interface State {}
+
+export default class NestRoutes extends Component<Props, State> {
+  constructor(props: Readonly<Props>) {
     super(props);
     console.log(this.props.routes);
   }
@@ -19,16 +21,14 @@ export default class NestRoutes extends React.Component<IProps, {}> {
         <br />
         <Link to="/nestroutes/sub2">Sub2</Link>
         <br />
-        {
-          this.props.routes.map((route: any, i: number) =>
-            <Route
-              key={i}
-              path={route.path}
-              exact={route.exact}
-              component={route.component}
-            />
-          )
-        }
+        {this.props.routes.map((route: any, i: number) => (
+          <Route
+            key={i}
+            path={route.path}
+            exact={route.exact}
+            component={route.component}
+          />
+        ))}
       </div>
     );
   }

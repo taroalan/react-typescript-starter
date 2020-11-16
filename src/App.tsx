@@ -1,19 +1,18 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import SiteHeader from '@/components/SiteHeader';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import routes from '@/router';
 
 import BasicLayout from '@/layouts/BasicLayout';
 
-export default class App extends React.Component {
+export default class App extends Component {
   renderRoutes() {
     return routes.map((route: any, i: number) => (
       <Route
         key={i}
         path={route.path}
         exact={route.exact}
-        // tslint:disable-next-line: jsx-no-lambda
-        render={props => <route.component {...props} routes={route.routes} />}
+        render={(props) => <route.component {...props} routes={route.routes} />}
       />
     ));
   }
@@ -21,7 +20,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
-        <React.Fragment>
+        <>
           <BasicLayout>
             <SiteHeader />
             {this.renderRoutes()}
@@ -38,7 +37,7 @@ export default class App extends React.Component {
             />
           )
         } */}
-        </React.Fragment>
+        </>
       </Router>
     );
   }

@@ -1,9 +1,9 @@
 const path = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 const config = require('./webpack.base.config');
@@ -32,21 +32,18 @@ const prodConfig = {
   output: {
     filename: '[name].[contenthash:8].js',
     chunkFilename: '[name].[contenthash:8].js',
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
   },
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
+      new TerserPlugin({
         parallel: true,
-        sourceMap: false,
       }),
-      new OptimizeCssAssetsPlugin(),
+      new CssMinimizerPlugin(),
     ],
     splitChunks: {
       chunks: 'async',
-      name: true,
       cacheGroups: {
         vendor: {
           name: 'vendor',

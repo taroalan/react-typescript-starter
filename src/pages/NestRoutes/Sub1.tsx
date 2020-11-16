@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 
-export default class Sub1 extends React.Component {
+export default class Sub1 extends Component {
   render() {
     return <div>Sub1</div>;
   }

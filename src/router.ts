@@ -3,8 +3,20 @@ import NestRoutes from './pages/NestRoutes';
 import Sub1 from '@/pages/NestRoutes/AsyncSub1';
 import Sub2 from '@/pages/NestRoutes/Sub2';
 import About from '@/pages/About';
+import { RouteComponentProps } from 'react-router-dom';
 
-const routes: Array<Object> = [
+interface RouteConfig {
+  path: string;
+  exact?: boolean;
+  component:
+    | React.ComponentType<RouteComponentProps<any>>
+    | React.ComponentType<any>;
+  routes?: RouteConfig[];
+}
+
+type RoutesConfig = RouteConfig[];
+
+const routes: RoutesConfig = [
   {
     path: '/',
     exact: true,

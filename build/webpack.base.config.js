@@ -10,14 +10,14 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, '../src'),
     },
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: 'babel-loader',
         exclude: /node_modules/,
       },
       {
@@ -33,6 +33,21 @@ module.exports = {
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
+        ],
+      },
+      {
+        test: /\.less$/,
+        use: [
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                javascriptEnabled: true,
+              },
+            },
+          },
         ],
       },
       {

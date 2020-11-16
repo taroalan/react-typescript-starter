@@ -3,8 +3,8 @@ const fetchListDo = () => {
     type: 'FETCH_LIST',
     list: [
       { name: 'xiaoli', age: 18 },
-      { name: 'xiaowang', age: 20 }
-    ]
+      { name: 'xiaowang', age: 20 },
+    ],
   };
 };
 

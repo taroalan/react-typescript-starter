@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 
-export default class About extends React.Component {
+export default class About extends Component {
   render() {
     return (
       <div className="about">

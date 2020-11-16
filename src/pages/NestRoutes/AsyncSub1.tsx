@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import Loadable from 'react-loadable';
 
 const LoadableComponent = Loadable({
@@ -6,7 +6,7 @@ const LoadableComponent = Loadable({
   loading: () => <div>loading</div>,
 });
 
-export default class Sub1 extends React.Component<{}, {}> {
+export default class Sub1 extends Component {
   render() {
     return <LoadableComponent />;
   }

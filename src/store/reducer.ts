@@ -1,6 +1,13 @@
-const defaultState = {
+type AnyObj = { [key: string]: any };
+
+interface StateData {
+  message: string;
+  list: AnyObj[];
+}
+
+const defaultState: StateData = {
   message: 'hello',
-  list: [] as object[]
+  list: [],
 };
 
 export default function (state = defaultState, action: any) {
@@ -9,7 +16,7 @@ export default function (state = defaultState, action: any) {
     case 'FETCH_LIST':
       return {
         ...state,
-        list: action.list
+        list: action.list,
       };
 
     default:

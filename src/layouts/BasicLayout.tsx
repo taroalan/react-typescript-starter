@@ -1,9 +1,8 @@
-import { Layout, Menu } from 'antd';
 import React, { Component } from 'react';
+import { Layout, Menu } from 'antd';
 import {
   DashboardOutlined,
   UserOutlined,
-  MenuOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
 } from '@ant-design/icons';
@@ -14,8 +13,16 @@ const SubMenu = Menu.SubMenu;
 
 import './BasicLayout.scss';
 
-export default class BasicLayout extends Component {
-  state = {
+interface Props {
+  children: React.ReactNode;
+}
+
+interface State {
+  collapsed: boolean;
+}
+
+export default class BasicLayout extends Component<Props, State> {
+  state: State = {
     collapsed: false,
   };
 
